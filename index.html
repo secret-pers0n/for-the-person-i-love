@@ -12,6 +12,18 @@
 
 <body>
 
+  <!-- 🖼️ MOVING & CHANGING BACKGROUND PHOTOS -->
+  <div class="scrolling-bg">
+    <!-- Masukkan path foto-foto kamu di sini -->
+    <div class="bg-slide active" style="background-image: url('foto1.jpg');"></div>
+    <div class="bg-slide" style="background-image: url('foto2.jpg');"></div>
+    <div class="bg-slide" style="background-image: url('foto3.jpg');"></div>
+    <div class="bg-slide" style="background-image: url('foto4.jpg');"></div>
+    <div class="bg-slide" style="background-image: url('foto5.jpg');"></div>
+    <div class="bg-slide" style="background-image: url('images/foto6.jpg');"></div>
+  </div>
+  <div class="bg-overlay"></div>
+
   <div class="scene">
     
     <!-- 💌 ENVELOPE STAGE -->
@@ -35,6 +47,37 @@
         
         <div class="notebook-content">
           <h1>My Love ❤️</h1>
+          <div class="text-container">
+            <p id="text"></p>
+          </div>
+          <button id="next-btn" class="hidden" onclick="transitionToProposal()">Lanjutkan ❤️</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 💍 PROPOSAL STAGE -->
+    <div id="proposal-wrapper" class="stage">
+      <div id="proposal">
+        <div id="ring">💍</div>
+        <h2>Will you keep loving me forever?</h2>
+        <button class="btn-action" onclick="takeRing()">Take the Ring ❤️</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 💖 CUSTOM POPUP MODAL -->
+  <div id="custom-modal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-icon">💍✨</div>
+      <p id="modal-message">I know you love me deeply, and I feel the same way, I hope we stay together and become a couple who succeeds together.</p>
+      <button class="btn-action" onclick="closeModal()">Sama-Sama Baby ❤️</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>   <h1>My Love ❤️</h1>
           <div class="text-container">
             <p id="text"></p>
           </div>
