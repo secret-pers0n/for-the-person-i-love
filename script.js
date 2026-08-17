@@ -41,6 +41,68 @@ setInterval(() => {
 /* 💌 1. BUKA AMPLOP & PINDAH KE NOTEBOOK */
 function openEnvelope() {
   envelope.classList.add("open");
+
+  setTimeout(() => {
+    envelopeStage.classList.remove("active");
+    
+    setTimeout(() => {
+      letterStage.classList.add("active");
+      typeLetter();
+    }, 400);
+  }, 1200);
+}
+
+/* 📜 2. ANIMASI MENGETIK TEKS */
+function typeLetter() {
+  const container = document.querySelector(".text-container");
+  
+  let t = setInterval(() => {
+    textEl.innerHTML += message[i];
+    i++;
+
+    // Scroll otomatis ke bawah saat mengetik
+    container.scrollTop = container.scrollHeight;
+
+    if (i >= message.length) {
+      clearInterval(t);
+      nextBtn.classList.remove("hidden");
+    }
+  }, 35);
+}
+
+/* 💍 3. TRANSISI KE PROPOSAL */
+function transitionToProposal() {
+  letterStage.classList.remove("active");
+
+  setTimeout(() => {
+    proposalStage.classList.add("active");
+  }, 500);
+}
+
+/* 💍 4. INTERAKSI CINCIN & POPUP MODAL */
+function takeRing() {
+  ring.style.transform = "scale(1.4) rotate(10deg)";
+  ring.style.filter = "drop-shadow(0 0 50px gold)";
+  
+  setTimeout(() => {
+    modal.classList.add("show");
+  }, 600);
+}
+
+function closeModal() {
+  modal.classList.remove("show");
+  
+  setTimeout(() => {
+    ring.style.transform = "scale(1) rotate(0deg)";
+    ring.style.filter = "drop-shadow(0 0 15px rgba(255, 215, 0, 0.6))";
+  }, 400);
+}  currentSlide = (currentSlide + 1) % bgSlides.length;
+  bgSlides[currentSlide].classList.add("active");
+}, 5000); // Gambar berganti secara otomatis setiap 5 detik
+
+/* 💌 1. BUKA AMPLOP & PINDAH KE NOTEBOOK */
+function openEnvelope() {
+  envelope.classList.add("open");
   
   setTimeout(() => {
     envelopeStage.classList.remove("active");
